@@ -131,13 +131,11 @@ class MainActivity : AppCompatActivity() {
 
                 }
                 else{
-                    previousOpperand.text = ""
-                    currentOpperand.text = result.toString()
+                    previousOpperand.text = result.toString() + "+"
+                    currentOpperand.text = ""
                 }
             }
-
-            output = true
-        }
+    }
 
 
 
@@ -156,8 +154,8 @@ class MainActivity : AppCompatActivity() {
 
                 }
                 else{
-                    previousOpperand.text = ""
-                    currentOpperand.text = result.toString()
+                    previousOpperand.text = result.toString() + "-"
+                    currentOpperand.text = ""
                 }
             }
 
@@ -179,8 +177,8 @@ class MainActivity : AppCompatActivity() {
 
                 }
                 else{
-                    previousOpperand.text = ""
-                    currentOpperand.text = result.toString()
+                    previousOpperand.text = result.toString() + "÷"
+                    currentOpperand.text = ""
                 }
             }
 
@@ -202,8 +200,8 @@ class MainActivity : AppCompatActivity() {
                     currentOpperand.text = ""
                 }
                 else {
-                    previousOpperand.text = ""
-                    currentOpperand.text = result.toString()
+                    previousOpperand.text = result.toString() + "×"
+                    currentOpperand.text = ""
                 }
             }
             output = true
