@@ -25,6 +25,7 @@
         android:layout_height="100dp"
         android:layout_marginEnd="15dp"
         android:gravity="end"
+        android:importantForAutofill="no"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textSize="30sp"
         app:autoSizeTextType="none"
