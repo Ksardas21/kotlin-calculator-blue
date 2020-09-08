@@ -16,11 +16,11 @@
 <string name="eight">8</string>
 <string name="nine">9</string>
 <string name="multiply">*</string>
-<string name="clearAll">AC</string>
+<string name="bracketOpen">(</string>
 <string name="clear">C</string>
 <string name="divide">/</string>
-<string name="plusMinus">+/-</string>
-<string name="brackets">( )</string>
+<string name="negative">+/-</string>
+<string name="bracketClose">)</string>
 
 
 

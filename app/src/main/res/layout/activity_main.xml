@@ -126,7 +126,7 @@
             app:layout_constraintBottom_toTopOf="@+id/buttonFour"
             app:layout_constraintEnd_toStartOf="@+id/buttonEight"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonClearAll" />
+            app:layout_constraintTop_toBottomOf="@+id/bracketOpen" />
 
         <Button
             android:id="@+id/buttonEight"
@@ -136,7 +136,7 @@
             app:layout_constraintBottom_toTopOf="@+id/buttonFive"
             app:layout_constraintEnd_toStartOf="@+id/buttonNine"
             app:layout_constraintStart_toEndOf="@+id/buttonSeven"
-            app:layout_constraintTop_toBottomOf="@+id/buttonClearAll" />
+            app:layout_constraintTop_toBottomOf="@+id/bracketOpen" />
 
         <Button
             android:id="@+id/buttonNine"
@@ -146,13 +146,13 @@
             app:layout_constraintBottom_toTopOf="@+id/buttonSix"
             app:layout_constraintEnd_toStartOf="@+id/buttonMultiply"
             app:layout_constraintStart_toEndOf="@+id/buttonEight"
-            app:layout_constraintTop_toBottomOf="@+id/buttonClearAll" />
+            app:layout_constraintTop_toBottomOf="@+id/bracketOpen" />
 
         <Button
-            android:id="@+id/buttonPlusMinus"
+            android:id="@+id/buttonNegative"
             style="@style/ActionButtonStyle"
             android:background="@drawable/button_bg"
-            android:text="@string/plusMinus"
+            android:text="@string/negative"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/buttonEquals"
             app:layout_constraintStart_toEndOf="@+id/buttonZero"
@@ -208,7 +208,7 @@
             app:layout_constraintBottom_toTopOf="@+id/buttonMinus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/buttonNine"
-            app:layout_constraintTop_toBottomOf="@+id/buttonClearAll" />
+            app:layout_constraintTop_toBottomOf="@+id/bracketOpen" />
 
         <Button
             android:id="@+id/buttonDivide"
@@ -224,34 +224,36 @@
             android:id="@+id/buttonClear"
             style="@style/ActionButtonStyle"
             android:background="@drawable/button_bg"
+            android:longClickable="true"
             android:text="@string/clear"
             app:layout_constraintBottom_toTopOf="@+id/buttonNine"
-            app:layout_constraintEnd_toEndOf="@+id/buttonEight"
+            app:layout_constraintEnd_toStartOf="@+id/bracketOpen"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/buttonClearAll"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
         <Button
-            android:id="@+id/buttonClearAll"
+            android:id="@+id/bracketOpen"
             style="@style/ActionButtonStyle"
             android:background="@drawable/button_bg"
-            android:text="@string/clearAll"
+            android:text="@string/bracketOpen"
             app:layout_constraintBottom_toTopOf="@+id/buttonEight"
-            app:layout_constraintEnd_toEndOf="@+id/buttonSeven"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/buttonEight"
+            app:layout_constraintStart_toEndOf="@+id/buttonSeven"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/buttonBrackets"
             style="@style/ActionButtonStyle"
             android:background="@drawable/button_bg"
-            android:text="@string/brackets"
+            android:text="@string/bracketClose"
             app:layout_constraintBottom_toTopOf="@+id/buttonNine"
             app:layout_constraintEnd_toStartOf="@+id/buttonDivide"
-            app:layout_constraintStart_toEndOf="@+id/buttonClear"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/bracketOpen"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

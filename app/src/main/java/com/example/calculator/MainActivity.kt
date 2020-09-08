@@ -20,9 +20,13 @@ class MainActivity : AppCompatActivity() {
         var operation = false
         var dotOp = false
         var negative = true
-
+        if (currentOpperand.text.isEmpty()) {
+            negative = true
+            dot = true
+            dotOp = false
+            negative = true
+        }
         buttonDivide.setOnClickListener {
-
             if(!operation)setTextFields("")
             if(currentOpperand.text.lastOrNull() in arrayOf('-', '+', '/', '*'))
             currentOpperand.text = currentOpperand.text.toString().dropLast(1) + "/"
@@ -31,6 +35,7 @@ class MainActivity : AppCompatActivity() {
             if(dot) {dotOp = false}
             dot = true
             operation = false
+            negative = true
         }
         buttonMultiply.setOnClickListener {
             if(!operation)setTextFields("")
@@ -41,9 +46,9 @@ class MainActivity : AppCompatActivity() {
             if(dot) {dotOp = false}
             dot = true
             operation = false
+            negative = true
         }
         buttonMinus.setOnClickListener {
-
             if(!operation)setTextFields("")
             if(currentOpperand.text.lastOrNull() in arrayOf('-', '+', '/', '*'))
                 currentOpperand.text = currentOpperand.text.toString().dropLast(1) + "-"
@@ -52,9 +57,9 @@ class MainActivity : AppCompatActivity() {
             if(dot) {dotOp = false}
             dot = true
             operation = false
+            negative = true
         }
         buttonPlus.setOnClickListener {
-
             if(!operation)setTextFields("")
             if(currentOpperand.text.lastOrNull() in arrayOf('-', '+', '/', '*'))
             currentOpperand.text = currentOpperand.text.toString().dropLast(1) + "+"
@@ -64,61 +69,79 @@ class MainActivity : AppCompatActivity() {
             dot = true
             operation = false
             negative = true
+            negative = true
         }
-
+        buttonNegative.setOnClickListener {
+            if(!negative)setTextFields("")
+            if(currentOpperand.text.endsWith("-") && !negative){ currentOpperand.text =
+                currentOpperand.text.toString().dropLast(1)
+                negative = true}
+            else if (negative){setTextFields("-")
+            negative = false
+            operation = false}
+        }
         buttonOne.setOnClickListener {
             if (currentOpperand.text.toString().startsWith("0") && currentOpperand.text.toString().length < 2) currentOpperand.text =
                 "" + "1"
             else setTextFields("1")
             operation = true
+            negative = false
         }
         buttonTwo.setOnClickListener {
             if (currentOpperand.text.toString().startsWith("0") && currentOpperand.text.toString().length < 2) currentOpperand.text =
                 "" + "2"
             else setTextFields("2")
             operation = true
+            negative = false
         }
         buttonThree.setOnClickListener {
             if (currentOpperand.text.toString().startsWith("0") && currentOpperand.text.toString().length < 2) currentOpperand.text =
                 "" + "3"
             else setTextFields("3")
             operation = true
+            negative = false
         }
         buttonFour.setOnClickListener {
             if (currentOpperand.text.toString().startsWith("0") && currentOpperand.text.toString().length < 2) currentOpperand.text =
                 "" + "4"
             else setTextFields("4")
             operation = true
+            negative = false
         }
         buttonFive.setOnClickListener {
             if (currentOpperand.text.toString().startsWith("0") && currentOpperand.text.toString().length < 2) currentOpperand.text =
                 "" + "5"
             else setTextFields("5")
             operation = true
+            negative = false
         }
         buttonSix.setOnClickListener {
             if (currentOpperand.text.toString().startsWith("0") && currentOpperand.text.toString().length < 2) currentOpperand.text =
                 "" + "6"
             else setTextFields("6")
             operation = true
+            negative = false
         }
         buttonSeven.setOnClickListener {
             if (currentOpperand.text.toString().startsWith("0") && currentOpperand.text.toString().length < 2) currentOpperand.text =
                 "" + "7"
             else setTextFields("7")
             operation = true
+            negative = false
         }
         buttonEight.setOnClickListener {
             if (currentOpperand.text.toString().startsWith("0") && currentOpperand.text.toString().length < 2) currentOpperand.text =
                 "" + "8"
             else setTextFields("8")
             operation = true
+            negative = false
         }
         buttonNine.setOnClickListener {
             if (currentOpperand.text.toString().startsWith("0") && currentOpperand.text.toString().length < 2) currentOpperand.text =
                 "" + "9"
             else setTextFields("9")
             operation = true
+            negative = false
         }
         buttonZero.setOnClickListener {
             when {
@@ -126,6 +149,7 @@ class MainActivity : AppCompatActivity() {
                 else -> setTextFields("0")
             }
             operation = true
+            negative = false
         }
         buttonDot.setOnClickListener {
             if(!dot) {setTextFields("")}
@@ -133,13 +157,7 @@ class MainActivity : AppCompatActivity() {
             else if(dot){setTextFields(".")}
             dot = false
             operation = true
-        }
-        buttonClearAll.setOnClickListener {
-            currentOpperand.text = ""
-            Result.text = ""
-            dot = true
-            operation = false
-            negative = true
+            negative = false
         }
         buttonClear.setOnClickListener {
             if (currentOpperand.text.lastOrNull() in arrayOf('+', '/', '-', '*') && dotOp){
